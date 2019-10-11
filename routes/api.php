@@ -15,10 +15,18 @@ use Illuminate\Http\Request;
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
     //return $request->user();
-    
+
 //});
 //Route::apiResource('category', 'CategoryController')->middleware('cors');
 //Route::apiResource('product', 'ProductController')->middleware('cors');
 
-Route::get('/sms', 'SmsController@index')->middleware('cors');
-Route::post('/sms', 'SmsController@post')->middleware('cors');
+// Route::get('/sms', 'SmsController@index')->middleware('cors');
+// Route::post('/sms', 'SmsController@post')->middleware('cors');
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+
+});
+
+Route::post('/twitts/all', 'TwitterController@index')->middleware('cors');
+
+Route::post('/twitts', 'TwitterController@post')->middleware('cors');
