@@ -13,11 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+    //return $request->user();
     
-});
+//});
+//Route::apiResource('category', 'CategoryController')->middleware('cors');
+//Route::apiResource('product', 'ProductController')->middleware('cors');
 
-Route::get('/sms', 'SmsController@index');
-
-Route::post('/sms', 'SmsController@post');
+Route::get('/sms', 'SmsController@index')->middleware('cors');
+Route::post('/sms', 'SmsController@post')->middleware('cors');
