@@ -22,3 +22,7 @@ Route::get('/twitter', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/twitter2', function () {
+    return view('twitter2');
+});
