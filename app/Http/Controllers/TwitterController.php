@@ -14,7 +14,22 @@ class TwitterController extends Controller
      */
     public function index()
     {
-        //
+        $twt = twitter::
+            //    ->orderBy('name', 'desc')
+                //take(10)
+               get();
+
+        return $twt->toJson();
+    }
+
+
+    public function post(Request $request)
+    {
+        $twt = new twitter();
+        $twt->title=$request["title"];
+        $twt->title=$request->title;
+        $twt->save();
+        return $twt->toJson();
     }
 
     /**
