@@ -2,34 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\twitter;
+use App\book;
 use Illuminate\Http\Request;
 
-class TwitterController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $twt = twitter::
-                orderBy('id', 'desc')->
-                //paiginate(10)->
-               get();
-
-        return $twt->toJson();
-    }
-
-
-    public function post(Request $request)
-    {
-        $twt = new twitter();
-        $twt->title=$request["title"];
-        $twt->title=$request->title;
-        $twt->save();
-        return $twt->toJson();
+        $ph='%'.$request-> phrase.'%';
+        $b=book::where('phrase','like',$ph)-> get();
+        
+        return $b->toJson();
     }
 
     /**
@@ -56,10 +44,10 @@ class TwitterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\twitter  $twitter
+     * @param  \App\book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(twitter $twitter)
+    public function show(book $book)
     {
         //
     }
@@ -67,10 +55,10 @@ class TwitterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\twitter  $twitter
+     * @param  \App\book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(twitter $twitter)
+    public function edit(book $book)
     {
         //
     }
@@ -79,10 +67,10 @@ class TwitterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\twitter  $twitter
+     * @param  \App\book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, twitter $twitter)
+    public function update(Request $request, book $book)
     {
         //
     }
@@ -90,10 +78,10 @@ class TwitterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\twitter  $twitter
+     * @param  \App\book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(twitter $twitter)
+    public function destroy(book $book)
     {
         //
     }
