@@ -22,6 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('/twitts/all', 'TwitterController@index')->middleware('cors');
 Route::post('/twitts', 'TwitterController@post')->middleware('cors');
+Route::delete('/delete', 'TwitterController@delete')->middleware('cors');
+Route::post('/update', 'TwitterController@update')->middleware('cors');
 Route::post('/register', 'Api\AuthController@register');
 Route::post('/login', 'Api\AuthController@login');
 Route::post('/book', 'BookController@index');

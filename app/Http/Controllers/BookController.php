@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function index(Request $request)
     {
-        $ph='%'.$request-> phrase.'%';
+        $ph='%'.$request->phrase.'%';
         $b=book::where('phrase','like',$ph)-> get();
         
         return $b->toJson();

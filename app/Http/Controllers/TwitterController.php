@@ -32,6 +32,28 @@ class TwitterController extends Controller
         return $twt->toJson();
     }
 
+    public function delete(Request $request)
+    {
+        $d=$request->id;
+        $b=twitter::where('id','like',$d)->delete();
+        
+        return "Twitte deleted";
+    }
+
+    public function update2(Request $request)
+    {
+        //$d=$request->id;
+        //if($request->title)
+        //$b.title==$request->title;
+        //$b=twitter::where('id','like',$d)->update();
+        //$b->save();
+        $request->validate([
+            'title'=>'required'
+        ]);
+        $twt->update($request->all());
+        return "Twitte updated";
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -82,9 +104,22 @@ class TwitterController extends Controller
      * @param  \App\twitter  $twitter
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, twitter $twitter)
+    public function update(Request $request)
     {
-        //
+       $id=$request->id;
+       if( $b=twitter::where('id','like', $id)->update($request->all()))
+        {return "twitte updated";}
+        else{
+            return "id not found";  
+        }
+   
+    
+       /* $request->validate([
+            'title'=>'required'
+        ]);
+        $twitter->update($request->all());
+        return $twitter->toJson();
+        */
     }
 
     /**
