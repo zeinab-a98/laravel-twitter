@@ -9,7 +9,17 @@
 
 ## About Laravel with ionic
 
-Laravel is a web application framework and ionic is our andoird apple cross platform system
+Laravel is a web application framework and ionic is our android apple cross-platform system
+
+ - run composer i
+ - run npm i
+ - run cp .env.example .env
+ - create db and set db config in .env file
+ - run php artisan k:g
+ - run php artisan migrate
+ - run php artisan db:seed
+ - run npm run dev
+ - run php artisan serve
 
 
 ## License
