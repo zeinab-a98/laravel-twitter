@@ -8,6 +8,32 @@ use Illuminate\Http\Request;
 class TwitterController extends Controller
 {
     /**
+     * @OA\Post (
+     *      path="/api/twitts?title={title}",
+     *      operationId="post twitt",
+     *      tags={"twitts"},
+     *      summary="post a twitt",
+     *      description="return your new twitt",
+     *     @OA\Parameter(
+     *          name="title",
+     *          required=true,
+     *          in="path",
+     *          example="my new twitt",
+     *          ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      )
+     * )
+     *
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -23,6 +49,31 @@ class TwitterController extends Controller
     }
 
 
+    /**
+     * @OA\Post (
+     *      path="/api/twitts/all",
+     *      operationId="get all twitts by post",
+     *      tags={"twitts"},
+     *      summary="post but get all twitts",
+     *      description="return all twitts",
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      )
+     * )
+     *
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function post(Request $request)
     {
         $twt = new twitter();
