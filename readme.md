@@ -20,6 +20,7 @@ Laravel is a web application framework and ionic is our android apple cross-plat
  - run php artisan db:seed
  - run npm run dev
  - run php artisan serve
+ - open /api/documentation
 
 
 ## License
