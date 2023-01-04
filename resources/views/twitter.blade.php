@@ -88,6 +88,7 @@
                      <a href="{{ url('/') }}">welcome</a>
                     <a href="{{ url('/twitter') }}">twitter</a>
                     <a href="{{ url('/login') }}">login</a>
+                    <a href="{{ url('/api/documentation') }}">API Documentation</a>
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>

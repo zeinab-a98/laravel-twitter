@@ -1,0 +1,59 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Twitter API",
+        "version": "0.2"
+    },
+    "paths": {
+        "/api/twitts?title={title}": {
+            "post": {
+                "tags": [
+                    "twitts"
+                ],
+                "summary": "post a twitt",
+                "description": "return your new twitt",
+                "operationId": "post twitt",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "required": true,
+                        "example": "my new twitt"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/twitts/all": {
+            "post": {
+                "tags": [
+                    "twitts"
+                ],
+                "summary": "post but get all twitts",
+                "description": "return all twitts",
+                "operationId": "get all twitts by post",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    }
+}

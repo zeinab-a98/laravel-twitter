@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0b770d90-1ad0-4bb7-b219-2778602af720",
+		"_postman_id": "647164f9-64c7-468b-bbc3-24665ccb6e74",
 		"name": "mobtakeran",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -25,7 +25,27 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "a new twitt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/twitts/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"twitts",
+						"all"
+					]
+				}
+			},
+			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

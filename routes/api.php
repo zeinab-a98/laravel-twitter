@@ -22,6 +22,7 @@ use Illuminate\Http\Request;
 
 // Route::get('/sms', 'SmsController@index')->middleware('cors');
 // Route::post('/sms', 'SmsController@post')->middleware('cors');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 
